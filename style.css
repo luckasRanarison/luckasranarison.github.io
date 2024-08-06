@@ -2,6 +2,10 @@
 @tailwind utilities;
 @tailwind components;
 
+html {
+  font-size: 14px;
+}
+
 @layer utilities {
   .bold-primary {
     @apply font-semibold text-primary;

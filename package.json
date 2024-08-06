@@ -1,8 +1,20 @@
 {
-  "name": "resume",
+  "name": "personal-website",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
+  "description": "luckasRanarison's personal website",
+  "author": "LIOKA Ranarison Fiderana",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luckasranarison/personal-website.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "homepage": "https://luckasranarison.github.io",
+  "main": "index.html",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,6 +24,6 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.40",
     "tailwindcss": "^3.4.7",
-    "vite": "^4.4.5"
+    "vite": "^5.3.4"
   }
 }
