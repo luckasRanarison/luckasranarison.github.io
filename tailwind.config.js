@@ -1,10 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["index.html"],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     colors: {
-      gray: "#1f2937",
-      primary: "#975f59",
+      white: "#fcf0ee",
+      gray: "#303246",
+      primary: { DEFAULT: "#975f59", light: "#dfb19a" },
+      secondary: { DEFAULT: "#e3906d", light: "#fbc773" },
     },
   },
   plugins: [],
