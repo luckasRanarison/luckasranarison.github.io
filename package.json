@@ -1,20 +1,17 @@
 {
-  "name": "personal-website",
-  "private": true,
+  "name": "luckas-website",
   "version": "0.1.0",
   "type": "module",
+  "main": "index.html",
   "description": "luckasRanarison's personal website",
   "author": "LIOKA Ranarison Fiderana",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luckasranarison/personal-website.git"
+    "url": "git+https://github.com/luckasRanarison/luckasranarison.github.io"
   },
-  "keywords": [
-    "portfolio"
-  ],
+  "keywords": [ "portfolio", "html", "tailwindcss" ],
   "homepage": "https://luckasranarison.github.io",
-  "main": "index.html",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
