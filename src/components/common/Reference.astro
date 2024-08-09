@@ -1,0 +1,17 @@
+---
+import Link from "./Link.astro";
+
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<span class="flex">
+  &lbrack;
+  <Link href={href} underline={false}>
+    <slot />
+  </Link>
+  &rbrack;
+</span>

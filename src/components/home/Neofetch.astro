@@ -1,0 +1,29 @@
+---
+import Title from "../common/Title.astro";
+import Key from "../common/Keyword.astro";
+
+import data from "@/static/home/neofetch";
+
+const colors = ["bg-primary-light", "bg-secondary", "bg-primary", "bg-gray"];
+---
+
+<div class="space-y-4">
+  <Title>neofetch</Title>
+  <div>
+    <div>
+      <Key>luckas</Key><span class="font-semibold">@</span><Key>fedora</Key>
+    </div>
+    <div>---------------------------------</div>
+    {
+      data.map(({ key, value }) => (
+        <div>
+          <Key>{key}: </Key>
+          {value}
+        </div>
+      ))
+    }
+    <div class="mt-4 flex">
+      {colors.map((color) => <div class:list={["h-10", "w-10", color]} />)}
+    </div>
+  </div>
+</div>

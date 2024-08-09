@@ -1,0 +1,23 @@
+---
+interface Props {
+  href: string;
+  underline?: boolean;
+  highlight?: boolean;
+}
+
+const { href, underline = true, highlight: hightlight = true } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    { "font-semibold": hightlight },
+    { "text-primary": hightlight },
+    "decoration-dotted",
+    "decoration-2",
+    "underline-offset-4",
+    { underline },
+    { "hover:underline": underline },
+    "sm:no-underline",
+  ]}><slot /></a
+>

@@ -1,0 +1,53 @@
+---
+import Link from "../common/Link.astro";
+import Title from "../common/Title.astro";
+import Reference from "../common/Reference.astro";
+
+import projects from "@/static/home/projects";
+---
+
+<div class="space-y-4">
+  <Title>cat projects.txt</Title>
+  <p>
+    Here is a list of my most relevant open source projects. For an exhaustive
+    list and to see my contributions, you can check out my
+    <Link href="https://github.com/luckasRanarison">GitHub</Link>
+    profile.
+  </p>
+  {
+    projects.map((p) => (
+      <div>
+        <div class="flex justify-between">
+          <h3 class="font-semibold text-primary">
+            &dash; {p.name}
+            {p.archived && "(archived)"}
+          </h3>
+          <div class="flex space-x-2">
+            {p.preview && <Reference href={p.preview}>preview</Reference>}
+            <Reference href={p.source}>source</Reference>
+          </div>
+        </div>
+        <p>{p.description.join(" ")}</p>
+        <div class="italic text-primary">
+          {p.tags.map((tag) => "#" + tag).join(" ")}
+        </div>
+        {p.dependants && (
+          <>
+            <div class="mt-2">Built using {p.name}:</div>
+            <ul>
+              {p.dependants.map((s) => (
+                <li>
+                  ~
+                  <Link href={s.source} underline={false}>
+                    {s.name}:
+                  </Link>
+                  <span>{s.description}</span>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
+    ))
+  }
+</div>

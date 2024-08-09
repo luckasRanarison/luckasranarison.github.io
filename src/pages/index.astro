@@ -1,0 +1,61 @@
+---
+import "../styles/global.css";
+
+import Hero from "../components/home/Hero.astro";
+import Facts from "../components/home/Facts.astro";
+import Neofetch from "../components/home/Neofetch.astro";
+import Projects from "../components/home/Projects.astro";
+import Contacts from "../components/home/Contacts.astro";
+import Footer from "../components/layout/Footer.astro";
+
+const metadata = [
+  {
+    name: "description",
+    content:
+      "I am Luckas, a full-stack software developer specialized in Rust and TypeScript, based in Madagascar",
+  },
+  {
+    name: "keywords",
+    content: "portfolio, luckasRanarison, developer, rust, typescript",
+  },
+  {
+    property: "og:title",
+    content: "Lioka Ranarison Fiderana (Luckas)",
+  },
+  {
+    property: "og:description",
+    content:
+      "I am Luckas, a full-stack software developer specialized in Rust and TypeScript, based in Madagascar",
+  },
+  {
+    property: "og:image",
+    content: "https://luckasranarison.github.io/social-preview.png",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {metadata.map((m) => <meta {...m} />)}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+    <title>Lioka Ranarison Fiderana (Luckas)</title>
+  </head>
+  <body class="flex flex-col items-center px-4 py-10">
+    <main class="w-full max-w-3xl space-y-8">
+      <Hero />
+      <Facts />
+      <Neofetch />
+      <Projects />
+      <Contacts />
+    </main>
+    <Footer />
+  </body>
+</html>

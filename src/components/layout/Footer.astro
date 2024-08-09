@@ -1,0 +1,27 @@
+---
+import Key from "../common/Keyword.astro";
+
+import socials from "@/static/others/social";
+---
+
+<footer class="mt-20 flex w-full flex-col items-center space-y-6 overflow-clip">
+  <div>
+    ===============================================================================
+  </div>
+  <div>
+    Built with <Key>&hearts;</Key> using
+    <Key>Ʌastro</Key> and
+    <Key>@tailwind</Key>
+  </div>
+  <div class="flex space-x-6">
+    {
+      socials.map(({ label, href, img, alt }) => (
+        <a href={href} aria-label={label}>
+          <img src={img.src} width="25" alt={alt} />
+        </a>
+      ))
+    }
+  </div>
+  <div>©2024 luckasRanarison.</div>
+  <div>vim:tw=78:ts=4:noet:ft=html:norl:</div>
+</footer>

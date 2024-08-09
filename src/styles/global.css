@@ -1,0 +1,3 @@
+html {
+  @apply font-mono text-sm leading-8 text-gray md:text-[16px];
+}
