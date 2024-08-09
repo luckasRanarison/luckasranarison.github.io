@@ -27,5 +27,6 @@ export default [
     label: "WCA profile",
     img: WcaSvg,
     alt: "WCA",
+    size: 23,
   },
 ];

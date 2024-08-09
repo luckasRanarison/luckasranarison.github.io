@@ -1,7 +1,20 @@
 {
-  "name": "luckasranarison-github-io",
+  "name": "luckasranarison.github.io",
   "type": "module",
   "version": "0.0.1",
+  "description": "luckasRanarison's personal website",
+  "author": "LIOKA Ranarison Fiderana",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luckasRanarison/luckasranarison.github.io"
+  },
+  "keywords": [
+    "portfolio",
+    "astro",
+    "tailwindcss"
+  ],
+  "homepage": "https://luckasranarison.github.io",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev --host",

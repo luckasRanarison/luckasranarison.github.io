@@ -9,15 +9,15 @@ import socials from "@/static/others/social";
     ===============================================================================
   </div>
   <div>
-    Built with <Key>&hearts;</Key> using
-    <Key>Ʌastro</Key> and
-    <Key>@tailwind</Key>
+    Built with <Key>&hearts;</Key> using <Key>ʌastro</Key> and <Key
+      >@tailwind</Key
+    >
   </div>
   <div class="flex space-x-6">
     {
-      socials.map(({ label, href, img, alt }) => (
+      socials.map(({ label, href, img, alt, size }) => (
         <a href={href} aria-label={label}>
-          <img src={img.src} width="25" alt={alt} />
+          <img src={img.src} width={size ?? 25} alt={alt} />
         </a>
       ))
     }
