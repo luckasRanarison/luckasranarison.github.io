@@ -1,7 +1,7 @@
 export default [
   {
     label: "Phone",
-    text: "+261341475235",
+    text: "+261381475235",
     href: "tel:+261341475235",
   },
   {

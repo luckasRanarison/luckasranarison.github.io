@@ -14,40 +14,42 @@ import projects from "@/static/home/projects";
     <Link href="https://github.com/luckasRanarison">GitHub</Link>
     profile.
   </p>
-  {
-    projects.map((p) => (
-      <div>
-        <div class="flex justify-between">
-          <h3 class="font-semibold text-primary">
-            &dash; {p.name}
-            {p.archived && "(archived)"}
-          </h3>
-          <div class="flex space-x-2">
-            {p.preview && <Reference href={p.preview}>preview</Reference>}
-            <Reference href={p.source}>source</Reference>
+  <ul class="space-y-4">
+    {
+      projects.map((p) => (
+        <li>
+          <div class="flex justify-between">
+            <h3 class="font-semibold text-primary">
+              &dash; {p.name}
+              {p.archived && "(archived)"}
+            </h3>
+            <div class="flex space-x-2">
+              {p.preview && <Reference href={p.preview}>preview</Reference>}
+              <Reference href={p.source}>source</Reference>
+            </div>
           </div>
-        </div>
-        <p>{p.description.join(" ")}</p>
-        <div class="italic text-primary">
-          {p.tags.map((tag) => "#" + tag).join(" ")}
-        </div>
-        {p.dependants && (
-          <>
-            <div class="mt-2">Built using {p.name}:</div>
-            <ul>
-              {p.dependants.map((s) => (
-                <li>
-                  ~
-                  <Link href={s.source} underline={false}>
-                    {s.name}:
-                  </Link>
-                  <span>{s.description}</span>
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
-      </div>
-    ))
-  }
+          <p>{p.description.join(" ")}</p>
+          <div class="italic text-primary">
+            {p.tags.map((tag) => "#" + tag).join(" ")}
+          </div>
+          {p.dependants && (
+            <>
+              <div class="mt-2">Built using {p.name}:</div>
+              <ul>
+                {p.dependants.map((s) => (
+                  <li>
+                    ~
+                    <Link href={s.source} underline={false}>
+                      {s.name}:
+                    </Link>
+                    <span>{s.description}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </li>
+      ))
+    }
+  </ul>
 </div>

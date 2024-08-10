@@ -9,18 +9,21 @@ export default [
     label: "GitHub profile",
     img: GitHubSvg,
     alt: "Github",
+    size: 25,
   },
   {
     href: "https://www.facebook.com/fiderana.ranarison/",
     label: "Facebook profile",
     img: FacebookSvg,
     alt: "Facebook",
+    size: 25,
   },
   {
     href: "https://www.reddit.com/user/GodBidOOf_1/",
     label: "Reddit profile",
     img: RedditSvg,
     alt: "Reddit",
+    size: 25,
   },
   {
     href: "https://www.worldcubeassociation.org/persons/2019LIOK01",

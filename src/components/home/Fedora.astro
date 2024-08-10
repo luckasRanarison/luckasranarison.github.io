@@ -1,5 +1,5 @@
 ---
-const logo = `
+const ascii = `
              .',;::::;,'.
          .';:cccccccccccc:;,.
       .;cccccccccccccccccccccc;.
@@ -24,9 +24,10 @@ cccccccc;.:odl:.;cccccccccccccc:,.
 
 <div class="font-semibold leading-5">
   <pre>{
-    logo.split("").map((ch) =>
-      ch == "'" || ch.match(/[c.;,:]/)
-      ? <span class="text-primary">{ch}</span>
-      : ch
-  )}</pre>
+    ascii.split("").map((char) =>
+      char.match(/[c.;,:'']/)
+        ? <span class="text-primary">{char}</span>
+        : char
+    )
+  }</pre>
 </div>

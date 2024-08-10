@@ -9,7 +9,7 @@ import socials from "@/static/others/social";
     ===============================================================================
   </div>
   <div>
-    Built with <Key>&hearts;</Key> using <Key>ʌastro</Key> and <Key
+    Built with <Key>&hearts;</Key> using <Key>ʌstro</Key> and <Key
       >@tailwind</Key
     >
   </div>
@@ -17,7 +17,13 @@ import socials from "@/static/others/social";
     {
       socials.map(({ label, href, img, alt, size }) => (
         <a href={href} aria-label={label}>
-          <img src={img.src} width={size ?? 25} alt={alt} />
+          <img
+            src={img.src}
+            width={size}
+            height={size}
+            alt={alt}
+            loading="lazy"
+          />
         </a>
       ))
     }

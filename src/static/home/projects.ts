@@ -77,7 +77,7 @@ export default [
     source: "https://github.com/luckasRanarison/japidic",
     preview: "https://japidic.vercel.app",
     description: [
-      "Free online japanese dictionary using Jotoba APIs, Kanji Alive and KanjiVG data.",
+      "Free online japanese dictionary using Jotoba APIs, Kanji Alive, and KanjiVG data.",
     ],
     tags: ["typescript", "web", "nextjs", "tailwindcss", "japanese"],
   },
