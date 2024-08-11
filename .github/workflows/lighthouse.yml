@@ -1,0 +1,59 @@
+# Lighthouse-Badger-Easy | GitHub Action Workflow
+# 
+# Description: Generates, adds & updates manually/automatically Lighthouse badges & reports from one/multiple input URL(s) to the current repository & main branch with minimal settings
+# Author: Sitdisch
+# Source: https://github.com/myactionway/lighthouse-badger-workflows
+# License: MIT
+# Copyright (c) 2021 Sitdisch
+
+name: 'Lighthouse-Badger'
+
+########################################################################
+# DEFINE YOUR INPUTS AND TRIGGERS IN THE FOLLOWING
+########################################################################
+
+env:
+  URLS: https://luckasranarison.github.io/
+  TOKEN_NAME: GITHUB_TOKEN
+  REPO_BRANCH: '${{ github.repository }} master'
+
+on:
+  push:
+    branches: 
+      - master
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 'https://luckasranarison.github.io/'
+        required: true
+      token_name:
+        description: 'GITHUB_TOKEN'
+        required: true
+
+########################################################################
+# THAT'S IT; YOU DON'T HAVE TO DEFINE ANYTHING IN THE FOLLOWING
+########################################################################
+
+jobs:
+  lighthouse-badger-easy:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    steps:
+      - name: Preparatory Tasks
+        run: |
+          REPOSITORY=`expr "${{ env.REPO_BRANCH }}" : "\([^ ]*\)"`
+          BRANCH=`expr "${{ env.REPO_BRANCH }}" : ".* \([^ ]*\)"`
+          echo "REPOSITORY=$REPOSITORY" >> $GITHUB_ENV
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+      - uses: actions/checkout@v3
+        with:
+          repository: ${{ env.REPOSITORY }}
+          token: ${{ secrets[github.event.inputs.token_name] || secrets[env.TOKEN_NAME] }}
+          ref: ${{ env.BRANCH }}
+      - uses: actions/checkout@v3
+        with:
+          repository: 'myactionway/lighthouse-badges'
+          path: temp_lighthouse_badges_nested
+      - uses: myactionway/lighthouse-badger-action@v2.2
+        with:
+          urls: ${{ github.event.inputs.urls || env.URLS }}
