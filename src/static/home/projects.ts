@@ -7,7 +7,16 @@ export default [
       "A decent NES emulator built using Rust and WebAssembly.",
       "It runs in the browser and also works on mobile devices.",
     ],
-    tags: ["rust", "typescript", "web", "wasm", "tailwindcss", "emulator"],
+    tags: [
+      "rust",
+      "typescript",
+      "kotlin",
+      "web",
+      "wasm",
+      "tailwindcss",
+      "android",
+      "emulator",
+    ],
   },
   {
     name: "tailwind-tools.nvim",
