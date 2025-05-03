@@ -1,22 +1,56 @@
+const tags = {
+  rust: "rust",
+  typescript: "typescript",
+  lua: "lua",
+  kotlin: "kotlin",
+  javascript: "javascript",
+  scheme: "scheme",
+  react: "react",
+  nextjs: "nextjs",
+  cli: "cli",
+  web: "web",
+  wasm: "wasm",
+  tailwindcss: "tailwindcss",
+  android: "android",
+  emulator: "emulator",
+  neovim: "neovim",
+  treesitter: "treesitter",
+  keyboard: "keyboard",
+  cubing: "cubing",
+  japanese: "japanese",
+  nlp: "nlp",
+  linux: "linux",
+  crate: "crate",
+};
+
 export default [
   {
     name: "MES",
     source: "https://github.com/luckasRanarison/mes",
     preview: "https://luckasranarison.github.io/mes",
     description: [
-      "A decent NES emulator built using Rust and WebAssembly.",
-      "It runs in the browser and also works on mobile devices.",
+      "A decent multi-plateform NES emulator written in Rust, available for the Web and Android.",
     ],
     tags: [
-      "rust",
-      "typescript",
-      "kotlin",
-      "web",
-      "wasm",
-      "tailwindcss",
-      "android",
-      "emulator",
+      tags.rust,
+      tags.typescript,
+      tags.kotlin,
+      tags.web,
+      tags.wasm,
+      tags.tailwindcss,
+      tags.android,
+      tags.emulator,
     ],
+  },
+  {
+    name: "okey",
+    source: "https://github.com/luckasRanarison/okey",
+    description: [
+      "An advanced, easy-to-use key remapper for Linux written in Rust, inspired by QMK.",
+    ],
+    article:
+      "https://medium.com/@luckasranarison/using-a-non-ergonomic-keyboard-more-ergonomically-with-okey-0a92cb658ea5",
+    tags: [tags.rust, tags.keyboard, tags.linux],
   },
   {
     name: "tailwind-tools.nvim",
@@ -24,7 +58,7 @@ export default [
     description: [
       "Unofficial Tailwind CSS integration and tooling for Neovim.",
     ],
-    tags: ["lua", "scheme", "neovim", "tailwindcss", "treesitter"],
+    tags: [tags.lua, tags.scheme, tags.neovim, tags.treesitter],
   },
   {
     name: "kewb",
@@ -32,7 +66,7 @@ export default [
     description: [
       "A Rubik's cube library and solver using Kociemba's two-phase algorithm.",
     ],
-    tags: ["rust", "cli", "crate", "cubing"],
+    tags: [tags.rust, tags.cli, tags.crate, tags.cubing],
     dependants: [
       {
         name: "Seliaste/mindsolver",
@@ -54,14 +88,14 @@ export default [
     description: [
       "DevDocs plugin for Neovim, making possible to browse docs in Neovim using Markdown.",
     ],
-    tags: ["lua", "neovim", "treesitter"],
+    tags: [tags.lua, tags.neovim, tags.treesitter],
   },
   {
     name: "tree-sitter-hyprlang",
     source:
       "https://github.com/tree-sitter-grammars/tree-sitter-hyprlang/tree/master",
     description: ["Treesitter grammar for Hyprland's configuration language."],
-    tags: ["javascript", "scheme", "treesitter"],
+    tags: [tags.javascript, tags.scheme, tags.treesitter],
   },
   {
     name: "icelang",
@@ -71,7 +105,14 @@ export default [
       "A minimal programming language inspired by Lua and Rust.",
       "It has a CLI and online interpreter using WebAssembly.",
     ],
-    tags: ["rust", "cli", "web", "wasm", "react", "tailwindcss"],
+    tags: [
+      tags.rust,
+      tags.cli,
+      tags.web,
+      tags.wasm,
+      tags.react,
+      tags.tailwindcss,
+    ],
   },
   {
     name: "kaiseki",
@@ -79,7 +120,7 @@ export default [
     description: [
       "A morphological analyzer and tokenizer for the japanese language using mecab-ipadic.",
     ],
-    tags: ["rust", "japanese", "nlp"],
+    tags: [tags.rust, tags.japanese, tags.nlp],
   },
   {
     name: "japidic",
@@ -88,15 +129,22 @@ export default [
     description: [
       "Free online japanese dictionary using Jotoba APIs, Kanji Alive, and KanjiVG data.",
     ],
-    tags: ["typescript", "web", "nextjs", "tailwindcss", "japanese"],
+    tags: [
+      tags.typescript,
+      tags.web,
+      tags.nextjs,
+      tags.tailwindcss,
+      tags.japanese,
+    ],
   },
   {
     name: "three-style",
     source: "https://github.com/luckasRanarison/three-style",
     description: [
-      "Rubik's cube 3-style commutator library and finder with a CLI.",
+      "Rubik's cube 3-style commutator library and finder.",
+      "It has also a standalone CLI.",
     ],
-    tags: ["rust", "cli", "crate", "cubing"],
+    tags: [tags.rust, tags.cli, tags.crate, tags.cubing],
   },
   {
     name: "regex-potata",
@@ -105,7 +153,14 @@ export default [
     description: [
       "A basic regex engine written in Rust. It has an online playground using codemirror and graphviz.",
     ],
-    tags: ["rust", "typescript", "web", "wasm", "react", "viz", "tailwindcss"],
+    tags: [
+      tags.rust,
+      tags.typescript,
+      tags.web,
+      tags.wasm,
+      tags.react,
+      tags.tailwindcss,
+    ],
   },
   {
     name: "yace",
@@ -114,12 +169,6 @@ export default [
     description: [
       "Yet another CHIP-8 emulator with a CLI and web interface. It also runs on mobile devices.",
     ],
-    tags: ["rust", "typescript", "web", "wasm", "emulator"],
-  },
-  {
-    name: "website",
-    source: "https://github.com/luckasRanarison/luckasranarison.github.io",
-    description: ["The current website, built using Astro and Tailwind CSS."],
-    tags: ["astro", "typescript", "web", "tailwindcss"],
+    tags: [tags.rust, tags.typescript, tags.web, tags.wasm, tags.emulator],
   },
 ];

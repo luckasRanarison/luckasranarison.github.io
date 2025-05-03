@@ -25,6 +25,7 @@ import projects from "@/static/home/projects";
             </h3>
             <div class="flex space-x-2">
               {p.preview && <Reference href={p.preview}>preview</Reference>}
+              {p.article && <Reference href={p.article}>article</Reference>}
               <Reference href={p.source}>source</Reference>
             </div>
           </div>
